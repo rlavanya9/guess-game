@@ -1,10 +1,12 @@
 from random import randint
-comp_guess = randint(1,101)
+a = int(input("provide the start range: "))
+b = int(input("provide the end range: "))
+comp_guess = randint(a,b)
 count = 0
 again = 'Y'
 prev_count = 0
 name = input("Howdy, what's your name? ")
-print(f"{name}, I'm thinking of a number between 1 and 100")
+print(f"{name}, I'm thinking of a number between {a} and {b}")
 print("Try to guess my number.")
 guess = 0
 # again condition Let Users Play Multiple Rounds and Track Best Scores
@@ -16,7 +18,7 @@ while (guess != comp_guess) and (again != 'N'):
             count += 1
             print("Your guess is too low, try again.")
 # Limit the Number of Guesses a User Gets
-        elif (guess > comp_guess) and (count <= 5):
+        elif (guess > comp_guess):
             count += 1
             print("Your guess is too high, try again.")
         else:    
